@@ -67,8 +67,8 @@
     <section>
         <!-- style = "width:100%; height:600px;" -->
         <div id = "map"  style = "width:100%; height:600px;"></div>
-        <!-- <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
-        <!-- <script>
+        <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script>
             // Creating the basemap options
             var mapOptions = {
                
@@ -89,8 +89,8 @@
             L.marker([-1.286389, 36.817223]).addTo(map)
     .bindPopup('This is the capital city.')
     .openPopup();
-         </script> -->
-         <script>
+         </script>
+         <!-- <script>
             // initialize Leaflet
             var map = L.map('map').setView({lon: 36.8219, lat: -1.2921}, 12);
       
@@ -106,7 +106,7 @@
             // show a marker on the map
             L.marker({lon: 36.8219, lat: -1.2921}).bindPopup('Nairobi, KENYA').addTo(map);
       
-      </script>
+      </script> -->
     </section>
    <!-- <section>
     <h3>Serving this data from a json file</h3>
@@ -173,78 +173,7 @@
   }
 
    </style>
-   <div class="footer__container">
- 
-  <div class="rights">
-    <style>
-        .rights{ 
-        display:flex;
-        flex-direction:row;
-       list-style: none;
-       align-items: center;
-       justify-content: center;
-       margin-top: 2rem;
-        }
-    </style>
-   
-<div>
-</div>
-  </div>
-   </div>
-   <!--==================== FOOTER ====================-->
-   
 </section>
-
-
 </body>
 
-<footer class="footer section" id="footer">
-    <div class="footer__container container grid">
-        <div class="footer__content">
-            <h3 class="footer__title">Contributers</h3>
-
-            <ul class="footer__list">
-                <li>Leafet Api</li>
-                <li>    
-                
-                    <a onclick="window.alert('This is the made with Vscode IDE')" href="" class="footer__link">Check IDE</a>
-
-                 </li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="footer__content">
-            <h3 class="footer__title">Authors</h3>
-
-            <ul class="footer__links">
-                <li>
-                    <a onclick="window.alert('This is the author: PHESTUS')" href="" class="footer__link">Check Authors</a>
-                </li>
-                <li>
-                    <a onclick="window.alert('This is my registration no:ENC222-0118/2019')" href="" class="footer__link">Registration no.</a>
-                </li>
-              
-               
-            </ul>
-        </div>
-
-        <div class="footer__content">
-            <h3 class="footer__title">Marginal information</h3>
-
-            <ul class="footer__links">
-                <li>
-                    <a onclick="window.alert('This is the marginal info: zoom:10X')" href="" class="footer__link">Zoom level</a>
-                </li>
-                <li>
-                    <a onclick="window.alert('This is the marginal info: Talk to us On 0791234650')" href="#" class="footer__link">Contact Us</a>
-                </li>
-               
-                
-            </ul>
-        </div>
-
-               </div>
-   
-    <span class="rights">&#169;  All rigths reserved</span>
-</footer>
 </html>
