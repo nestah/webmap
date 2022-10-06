@@ -66,8 +66,8 @@
     <section class="sub-title">OPENSTREET BASEMAP</section>
     <section>
         <div id = "map" style = "width:100%; height:600px;"></div>
-        <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script>
+        <!-- <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
+        <!-- <script>
             // Creating the basemap options
             var mapOptions = {
                
@@ -88,7 +88,24 @@
             L.marker([-1.286389, 36.817223]).addTo(map)
     .bindPopup('This is the capital city.')
     .openPopup();
-         </script>
+         </script> -->
+         <script>
+            // initialize Leaflet
+            var map = L.map('map').setView({lon: 36.8219, lat: -1.2921}, 12);
+      
+            // add the OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+            }).addTo(map);
+      
+            // show the scale bar on the lower left corner
+            L.control.scale({imperial: true, metric: true}).addTo(map);
+      
+            // show a marker on the map
+            L.marker({lon: 36.8219, lat: -1.2921}).bindPopup('Nairobi, KENYA').addTo(map);
+      
+      </script>
     </section>
    <section>
     <h3>Serving this data from a json file</h3>
