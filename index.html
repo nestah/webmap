@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>WEB MAPPING </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./styles.css'>
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src='main.js'></script>
+      <!-- INCLUDING JQUERY
+      <script src=
+      "https://code.jquery.com/jquery-3.5.1.js">
+          </script> -->
+
+          
+  
+
+</head>
+<body class="body" style=" background-color: #dcdde0">
+    <section class="header_title">
+        <div class="header">
+            <style>
+                .header1{
+                    color:aliceblue;
+                    margin-top: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 28px;  
+                    background-color: #5b657b;
+                    
+                }
+                .sub-title{
+                    
+                    color:#fc6D6D;
+                    margin-top: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 25px; 
+                }
+                  
+  .body {
+    background-color: #5b657b;
+  
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+    margin: 0px;
+    background-color: var(--body-color);
+    color: var(--text-color);
+  } 
+                 .header1 :hover{
+                    color:orange;
+                    font-weight: bold;
+                }
+                a{
+                    color: #dcdde0;
+                }
+            </style>
+           <a href="file:///C:/Users/Admin/Desktop/spaweb/containers/index.html"></a> 
+        </div>
+    </section>
+     <section class="header1"> <a href="">WEB MAPPING</a> </section>
+    <section class="sub-title">OPENSTREET BASEMAP</section>
+    <section>
+        <div id = "map" style = "width:100%; height:600px;"></div>
+        <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script>
+            // Creating the basemap options
+            var mapOptions = {
+               
+               center: [-1.286389, 36.817223],
+               zoom: 10
+            }
+            
+            // Creating a map object
+            var map = new L.map('map', mapOptions);
+            
+            // Creating a Layer object
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            
+            // Adding layer to the map
+            map.addLayer(layer);
+
+            // Adding popup function
+            L.marker([-1.286389, 36.817223]).addTo(map)
+    .bindPopup('This is the capital city.')
+    .openPopup();
+         </script>
+    </section>
+   <section>
+    <h3>Serving this data from a json file</h3>
+    <div id="Data"></div>
+        <script>
+       fetch('./data.json')
+         .then(function(response) {
+            return response.json();
+         })
+    .then(function(data){
+        for(var i=0; i<data.length; i++){
+            document.getElementById('Data').innerHTML +=
+            data[i].id + ":" + data[i].firstName + ":" + data[i].lastName  + "<br/>"
+        
+        }
+    })
+
+    .catch(function(err){
+        console.log(err)
+    })
+
+        </script>
+</section>
+    <section class="footer" 
+   
+    >
+    <style>
+    .footer{
+        color:white;
+        background-color:#3d9885;
+        min-height: 30vh;
+        margin-top: 1.5rem;
+        font-size: 18px;
+        
+    }
+    .content_footer {
+        display:flex;
+        flex-direction:row;
+       list-style: none;
+       margin-top: 1rem;
+        
+        
+    }
+    .footer__title {
+        display:flex;
+        flex-direction:row;
+       list-style: none;
+       margin-top: 1rem;
+      }
+   
+  /* For medium devices */
+@media screen and (max-width: 676px) {
+  
+    .content_footer {
+      grid-template-columns: repeat(1, 1fr);
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+   </style>
+   <div class="footer__container">
+    <!-- <div class="content_footer">
+        
+            <li style="font-size:20px ;"><a onclick="window.alert('We are the Contributers: ENC222-0118/2019 ')" style="color: black; text-decoration:none;" href="#"><h3 class="footer__title">Contributers</h3> </a>
+    <ul>Click Contributers to view popup </ul>
+    </a></li>
+    </div> -->
+    <!-- <div class="content_footer">
+        <li style="font-size:20px ;"><a onclick="window.alert('We are the Authors : PHESTUS')" style="color: black; text-decoration:none;" href="#"><h3 class="footer__title">Authors</h3> </a>
+        <ul>Click Authors to view popup </ul>
+    </li> 
+    </div> -->
+    <!-- <div class="content_footer">
+    <li style="font-size:20px ;"><a onclick="window.alert('This is the marginal info: zoom:10X')" style="color: black; text-decoration:none;" href="#"><h3 class="footer__title">Marginal Information</h3> </a>
+        <ul>Click Marginal information to view popup </ul>
+
+    </li> 
+    </div> -->
+ 
+  <div class="rights">
+    <style>
+        .rights{ 
+        display:flex;
+        flex-direction:row;
+       list-style: none;
+       align-items: center;
+       justify-content: center;
+       margin-top: 2rem;
+        }
+    </style>
+   
+<div>
+  <!-- <span class="rights">&#169; 2022 | All rigths reserved</span> -->
+</div>
+  </div>
+   </div>
+   <!--==================== FOOTER ====================-->
+    <footer class="footer section" id="footer">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <h3 class="footer__title">Contributers</h3>
+
+                <ul class="footer__list">
+                    <li>Leafet Api</li>
+                    <li>    
+                    
+                        <a onclick="window.alert('This is the made with Vscode IDE')" href="" class="footer__link">Check IDE</a>
+
+                     </li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Authors</h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a onclick="window.alert('This is the author: PHESTUS')" href="" class="footer__link">Check Authors</a>
+                    </li>
+                    <li>
+                        <a onclick="window.alert('This is my registration no:ENC222-0118/2019')" href="" class="footer__link">Registration no.</a>
+                    </li>
+                  
+                   
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Marginal information</h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a onclick="window.alert('This is the marginal info: zoom:10X')" href="" class="footer__link">Zoom level</a>
+                    </li>
+                    <li>
+                        <a onclick="window.alert('This is the marginal info: Talk to us On 0791234650')" href="#" class="footer__link">Contact Us</a>
+                    </li>
+                   
+                    
+                </ul>
+            </div>
+
+                   </div>
+       
+        <span class="rights">&#169;  All rigths reserved</span>
+    </footer>
+</section>
+
+
+</body>
+</html>
